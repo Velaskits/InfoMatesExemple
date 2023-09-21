@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Timeline;
 
 public class Bala : MonoBehaviour
@@ -24,6 +25,12 @@ public class Bala : MonoBehaviour
         transform.position = novaPos;
         
         if(novaPos.y >= limitarribaY){
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D objecteTocat){
+        if(objecteTocat.tag == "Numero"){
             Destroy(gameObject);
         }
     }

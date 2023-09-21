@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4057816871417589871}
   - component: {fileID: 621883954539526758}
+  - component: {fileID: -58171061167472233}
   m_Layer: 0
-  m_Name: Suma
+  m_Name: Operacio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-58171061167472233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457388536408388823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d34c3aa209ae24fab3dd6eea2144fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opera:
+  - {fileID: 21300000, guid: f76fbad7b865acd468410489ce07a28c, type: 3}
+  - {fileID: 21300000, guid: 4788816be81a75e44a399fbf982e3f4a, type: 3}
+  - {fileID: 21300000, guid: 91a2cf9e7d2e53a499526266f4edce7d, type: 3}
+  - {fileID: 21300000, guid: 049f1e9430249c74083d38c5e86a9299, type: 3}
+  - {fileID: 21300000, guid: f07d4f2544f28ae4d8058d098880c5a7, type: 3}
