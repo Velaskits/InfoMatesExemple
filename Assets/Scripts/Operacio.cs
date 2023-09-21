@@ -29,6 +29,12 @@ public class Operacio : MonoBehaviour
         DestruyeFueraLimites();
     }
 
+    private void OnTriggerEnter2D(Collider2D objecteTocat){
+        if(objecteTocat.tag == "Bala" || objecteTocat.tag == "NauJugador"){
+            Destroy(gameObject);
+        }
+    }
+
     private void DestruyeFueraLimites(){
         Vector2 costatInferiorEsquerra = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
         if(transform.position.y <= costatInferiorEsquerra.y){

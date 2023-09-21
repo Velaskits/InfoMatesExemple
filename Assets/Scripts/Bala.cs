@@ -30,7 +30,7 @@ public class Bala : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D objecteTocat){
-        if(objecteTocat.tag == "Numero"){
+        if(objecteTocat.tag == "Numero" || objecteTocat.tag == "Operacion"){
             Destroy(gameObject);
         }
     }
