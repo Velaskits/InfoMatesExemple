@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Numero : MonoBehaviour
+public class Operacio : MonoBehaviour
 {
     private float _vel;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class Numero : MonoBehaviour
     {
         Vector2 novaPos = transform.position;
         novaPos.y = novaPos.y - _vel * Time.deltaTime;
-        //Debug.Log(Time.deltaTime);
+        Debug.Log(Time.deltaTime);
         transform.position = novaPos;
 
         DestruyeFueraLimites();

@@ -9,7 +9,7 @@ public class NauJugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vel_nau = 5f;
+        vel_nau = 7f;
     }
 
     // Update is called once per frame
