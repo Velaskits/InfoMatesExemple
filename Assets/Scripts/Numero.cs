@@ -6,10 +6,14 @@ using UnityEngine;
 public class Numero : MonoBehaviour
 {
     private float _vel;
+
+    public Sprite[] _SpriteNumeros = new Sprite[10];
     // Start is called before the first frame update
     void Start()
     {
         _vel = 2f;
+
+        
     }
 
     // Update is called once per frame
