@@ -22,6 +22,7 @@ public class Bala : MonoBehaviour
         float altura = spriteRenderer.bounds.size.y /2;
         float limitarribaY = Camera.main.orthographicSize;
         transform.position = novaPos;
+        
         if(novaPos.y >= limitarribaY){
             Destroy(gameObject);
         }
