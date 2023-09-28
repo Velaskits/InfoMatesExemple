@@ -6,7 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Nau1;
     public GameObject GameOver;
-    public enum EstatsGameManager{
+    public GameObject TituloJuego;
+    public GameObject BotoInici;
+    public GameObject GeneradorNumeros;
+    public GameObject GeneradorOperacions;
+    public enum EstatsGameManager
+    {
         Inici,
         Jugant,
         GameOver
@@ -23,38 +28,46 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void ActualitzaEstatGameManager(){
-        switch(_estatGameManager){
+    private void ActualitzaEstatGameManager()
+    {
+        switch (_estatGameManager)
+        {
             case EstatsGameManager.Inici:
                 Nau1.SetActive(false);
-                GameObject.Find("TitolJoc").SetActive(true);
+                TituloJuego.SetActive(true);
                 GameOver.SetActive(false);
-                GameObject.Find("BotoInici").SetActive(true);
+                BotoInici.SetActive(true);
                 break;
             case EstatsGameManager.Jugant:
+                GeneradorNumeros.GetComponent<GeneradorDeNumeros>().IniciaGeneracioNums();
+                GeneradorOperacions.GetComponent<GeneradorOperacions>().IniciaGeneracioOper();
                 Nau1.SetActive(true);
-                GameObject.Find("TitolJoc").SetActive(false);
+                TituloJuego.SetActive(false);
                 GameOver.SetActive(false);
-                GameObject.Find("BotoInici").SetActive(false);
+                BotoInici.SetActive(false);
                 break;
             case EstatsGameManager.GameOver:
+                GeneradorNumeros.GetComponent<GeneradorDeNumeros>().AturaGeneracioNums();
+                GeneradorOperacions.GetComponent<GeneradorOperacions>().AturaGeneracioOper();
                 Nau1.SetActive(false);
-                GameObject.Find("TitolJoc").SetActive(false);
+                TituloJuego.SetActive(false);
                 GameOver.SetActive(true);
-                GameObject.Find("BotoInici").SetActive(false);
+                BotoInici.SetActive(false);
                 break;
         }
     }
 
-    public void SetEstatGameManager(EstatsGameManager estat){
+    public void SetEstatGameManager(EstatsGameManager estat)
+    {
         _estatGameManager = estat;
         ActualitzaEstatGameManager();
     }
 
-    public void PassarAEstatJugant(){
+    public void PassarAEstatJugant()
+    {
         _estatGameManager = EstatsGameManager.Jugant;
         ActualitzaEstatGameManager();
     }

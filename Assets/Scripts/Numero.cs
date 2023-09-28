@@ -7,6 +7,7 @@ public class Numero : MonoBehaviour
 {
     private float _vel;
     private int _vlaorNumero;
+    public GameObject _PrefebExplosio;
     public Sprite[] _SpriteNumeros = new Sprite[10];
     // Start is called before the first frame update
     void Start()

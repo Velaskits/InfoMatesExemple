@@ -1022,6 +1022,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nau1: {fileID: 183261133}
   GameOver: {fileID: 1463265280}
+  TituloJuego: {fileID: 437914901}
+  BotoInici: {fileID: 623206614}
+  GeneradorNumeros: {fileID: 1533060576}
+  GeneradorOperacions: {fileID: 702881386}
 --- !u!4 &1799106553
 Transform:
   m_ObjectHideFlags: 0

@@ -6,12 +6,20 @@ public class GeneradorOperacions : MonoBehaviour
 {
     public GameObject _PrefabsOperacio;
     // Start is called before the first frame update
-    void Start()
+    public void IniciaGeneracioOper()
     {
         //El primer parametro es el metodo de respawn
         //El segundo es el tiempo que tarda en empezar a respawnear
         //El tercero es el tiempo entre respawn y respawn
-        InvokeRepeating("Genera", 1f, 3f);
+        InvokeRepeating("GeneradorOperacions", 1f, 3f);
+    }
+
+    public void AturaGeneracioOper(){
+        CancelInvoke("GeneradorOperacions");
+    }
+    void Start()
+    {
+        
         
     }
 
@@ -23,7 +31,7 @@ public class GeneradorOperacions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        IniciaGeneracioOper();
        
     }
 
