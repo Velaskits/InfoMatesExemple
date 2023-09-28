@@ -5,11 +5,12 @@ using UnityEngine.XR;
 
 public class NauJugador : MonoBehaviour
 {
-    public float vel_nau;
+    public float _vel_nau;
+    public GameObject _PrefabExplosio;
     // Start is called before the first frame update
     void Start()
     {
-        vel_nau = 7f;
+        _vel_nau = 7f;
     }
 
     // Update is called once per frame
@@ -21,8 +22,10 @@ public class NauJugador : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D objecteTocat){
+    public void OnTriggerEnter2D(Collider2D objecteTocat){
         if(objecteTocat.tag == "Numero" || objecteTocat.tag == "Operacion"){
+            GameObject explosio = Instantiate(_PrefabExplosio);
+            explosio.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
@@ -47,7 +50,7 @@ public class NauJugador : MonoBehaviour
         Vector2 direccio_indicada = new Vector2(direccio_horitzontal, direccio_vertical).normalized;
 
         Vector2 posicio_objecte = transform.position; //Ens retorna la posicio actual de la nau.
-        posicio_objecte += direccio_indicada * vel_nau * Time.deltaTime;
+        posicio_objecte += direccio_indicada * _vel_nau * Time.deltaTime;
 
         posicio_objecte.x = Mathf.Clamp(posicio_objecte.x, limitEsquerraX, limitDretaX);
         posicio_objecte.y = Mathf.Clamp(posicio_objecte.y, limitabajoY, limitarribaY);

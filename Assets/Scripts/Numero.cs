@@ -11,7 +11,7 @@ public class Numero : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _vel = 15f;
+        _vel = 5f;
         System.Random aleatori = new System.Random();
         _vlaorNumero = aleatori.Next(0,10); //Aleatorio con un rango de 0 al 9.
         //Accedemos al componente Sprite Rnederer y dentro de este componente vamos al atributo Sprite.
@@ -29,7 +29,7 @@ public class Numero : MonoBehaviour
         DestruyeFueraLimites();
     }
 
-    private void OnTriggerEnter2D(Collider2D objecteTocat){
+    public void OnTriggerEnter2D(Collider2D objecteTocat){
         if(objecteTocat.tag == "Bala" || objecteTocat.tag == "NauJugador"){
             Destroy(gameObject);
         }

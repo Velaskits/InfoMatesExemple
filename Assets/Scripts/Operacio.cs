@@ -29,7 +29,7 @@ public class Operacio : MonoBehaviour
         DestruyeFueraLimites();
     }
 
-    private void OnTriggerEnter2D(Collider2D objecteTocat){
+    public void OnTriggerEnter2D(Collider2D objecteTocat){
         if(objecteTocat.tag == "Bala" || objecteTocat.tag == "NauJugador"){
             Destroy(gameObject);
         }
