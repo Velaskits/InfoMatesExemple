@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -26,7 +27,10 @@ public class NauJugador : MonoBehaviour
         if(objecteTocat.tag == "Numero" || objecteTocat.tag == "Operacion"){
             GameObject explosio = Instantiate(_PrefabExplosio);
             explosio.transform.position = transform.position;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            GameObject.Find("GameManager")
+                .GetComponent<GameManager>()
+                .SetEstatGameManager(GameManager.EstatsGameManager.GameOver);
         }
     }
 
